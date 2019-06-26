@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools"
+                                                   android:orientation="vertical"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="280dp" android:id="@+id/popupAbout">
+
+    <View
+            android:layout_width="0dp"
+            android:layout_height="0dp" android:id="@+id/view"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="32dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="32dp"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginBottom="32dp" android:layout_marginTop="32dp"
+            android:background="?attr/colorBackgroundFloating"/>
+    <TextView
+            android:text="@string/app_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ptAppmName"
+            app:layout_constraintTop_toTopOf="@+id/view" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/view"
+            android:textSize="30sp" app:layout_constraintStart_toStartOf="@+id/view"
+            app:layout_constraintEnd_toEndOf="@+id/view" app:layout_constraintVertical_bias="0.125"
+            android:fontFamily="sans-serif" app:layout_constraintHorizontal_bias="0.497"/>
+    <TextView
+            android:text="@string/about_detail"
+            android:layout_width="272dp"
+            android:layout_height="112dp"
+            android:id="@+id/ptDetail" android:layout_marginTop="12dp"
+            app:layout_constraintTop_toBottomOf="@+id/ptAppmName"
+            app:layout_constraintStart_toStartOf="@+id/ptAppmName" app:layout_constraintEnd_toEndOf="@+id/ptAppmName"
+            app:layout_constraintHorizontal_bias="0.505" android:textSize="14sp" android:textAlignment="center"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

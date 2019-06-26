@@ -6,9 +6,9 @@ import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Bundle
 import android.os.Parcelable
-import android.util.AttributeSet
 import android.util.Log
 import android.view.*
+import android.widget.PopupWindow
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -17,6 +17,7 @@ import com.github.florent37.expectanim.core.Expectations.*
 import com.google.android.material.appbar.AppBarLayout
 import com.google.gson.Gson
 import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.about.*
 
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.btnImage
@@ -36,6 +37,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
         recyclerView.layoutManager = LinearLayoutManager(this)
+
 
 //        val anim = ExpectAnim()
 //            .expect(imgView)
@@ -105,12 +107,12 @@ class MainActivity : AppCompatActivity() {
                 val json = Gson().fromJson(body,  JsonFeeds::class.java)
 
                 if (json.header.status > 0) {
-                    Snackbar.make(mainCoordinatorLayout, getString(R.string.sanckWrongServer), Snackbar.LENGTH_LONG).show()
+                    Snackbar.make(mainCoordinatorLayout, getString(R.string.snack_server_errors), Snackbar.LENGTH_LONG).show()
                     runOnUiThread {
                         recyclerView.adapter = CardAdapter(json, applicationContext)
                     }
                 } else if (json.header.status < 0) {
-                    Snackbar.make(mainCoordinatorLayout, getString(R.string.sanckWrongURL), Snackbar.LENGTH_LONG).show()
+                    Snackbar.make(mainCoordinatorLayout, getString(R.string.snack_wrong_url), Snackbar.LENGTH_LONG).show()
                 } else {
                     runOnUiThread {
                         recyclerView.adapter = CardAdapter(json, applicationContext)
@@ -175,11 +177,16 @@ class MainActivity : AppCompatActivity() {
                 Snackbar.make(mainCoordinatorLayout,"button clicked!",Snackbar.LENGTH_SHORT).show()
                 return true
             }
+            R.id.action_about -> {
+                val popupAboutWindow = PopupWindow(popupAbout, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, true)
+                popupAboutWindow.showAtLocation(mainCoordinatorLayout, Gravity.CENTER, 0, 0)
+                return true
+            }
             R.id.action_searchBy -> {
                 when (iconLink) {
                     true -> {
                         item.setIcon(R.drawable.ic_image)
-                        item.setTitle(R.string.searchByImage)
+                        item.setTitle(R.string.action_button_image)
                         iconLink = false
                         ptUrl.visibility  = View.VISIBLE
                         btnImage.visibility =View.GONE
@@ -188,7 +195,7 @@ class MainActivity : AppCompatActivity() {
                     }
                     false -> {
                         item.setIcon(R.drawable.ic_link)
-                        item.setTitle(R.string.searchByURL)
+                        item.setTitle(R.string.action_button_url)
                         iconLink = true
                         ptUrl.visibility  = View.GONE
                         btnImage.visibility =View.VISIBLE
@@ -200,13 +207,5 @@ class MainActivity : AppCompatActivity() {
             }
             else -> super.onOptionsItemSelected(item)
         }
-    }
-}
-
-class StopDragBehavior(context: Context, attrs: AttributeSet) : AppBarLayout.Behavior(context, attrs) {
-    init {
-        setDragCallback(object : DragCallback() {
-            override fun canDrag(appBarLayout: AppBarLayout): Boolean = false
-        })
     }
 }

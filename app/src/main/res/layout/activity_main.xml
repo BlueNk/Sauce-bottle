@@ -34,7 +34,7 @@
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/mainPageText"
+                    android:text="@string/text_main"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
@@ -48,7 +48,7 @@
                     android:inputType="textUri|text"
                     android:ems="10"
                     android:id="@+id/ptUrl"
-                    android:hint="@string/plaintextUrl" android:layout_marginStart="8dp"
+                    android:hint="@string/edit_text_hint" android:layout_marginStart="8dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/stMain"
@@ -60,7 +60,7 @@
             <Button
                     android:layout_width="91dp"
                     android:layout_height="45dp"
-                    android:id="@+id/btnImage" android:text="@string/buttonText"
+                    android:id="@+id/btnImage" android:text="@string/button_text"
                     android:layout_marginEnd="8dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="20dp"
@@ -68,13 +68,15 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
             />
-            <ImageView
+            <moe.bluenk.saucebottle.TopCropImageView
                     android:layout_height="200dp"
                     android:layout_width="match_parent"
                     android:id="@+id/imgView"
-                    android:scaleType="centerCrop"
-                    app:layout_constraintTop_toBottomOf="@id/stMain" app:layout_constraintBottom_toBottomOf="parent"
-                    android:layout_marginTop="80dp" android:background="#FAFAFA"/>
+                    android:scaleType="matrix"
+                    app:layout_constraintTop_toBottomOf="@id/stMain"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginTop="80dp"
+                    android:background="#FAFAFA"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.appbar.AppBarLayout>
     <androidx.recyclerview.widget.RecyclerView

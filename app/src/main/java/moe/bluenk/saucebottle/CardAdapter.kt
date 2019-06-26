@@ -6,7 +6,6 @@ import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.AnimationUtils
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
 import com.squareup.picasso.Picasso
@@ -42,7 +41,7 @@ class CardAdapter(val  jsonfeed: JsonFeeds ,val ctx: Context): RecyclerView.Adap
         // Danbooru 9 / Gelbooru / yande.re 12
         val index3rd = arrayOf(9, 12)
         if ( jsonfeed.results[position].header.index_id in index3rd ) {
-            holder.view.stTitle.text = ctx.getString(R.string.noTitle)
+            holder.view.stTitle.text = ctx.getString(R.string.title_empty)
             holder.view.stTinyTitle.text = jsonfeed.results[position].data.creator.toString()
 
             var sourceURL = Uri.parse(jsonfeed.results[position].data.source)
