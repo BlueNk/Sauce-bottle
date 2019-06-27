@@ -14,13 +14,14 @@
 
     <!--        list item        -->
     <string name="title_empty">no Title</string>
+    <string name="source_empty">no source</string>
 
     <!--        SnackBar        -->
     <string name="snack_server_errors">SauceNao server errors. Results might be wrong!</string>
     <string name="snack_wrong_url">Not supported URL.</string>
 
     <string name="about_detail">
-        All search features is powered by SauceNao API, not this app.
+        All search features are provide by SauceNao API, not this app.
         If you love this app, Please consider donate to SauceNao.
     </string>
 
@@ -28,5 +29,7 @@
     <string name="thirdPartySite">3rd party</string>
     <string name="pixiv">Pixiv</string>
     <string name="twitter">Twitter</string>
+    <string name="exhentai">exhentai</string>
+
 
 </resources>

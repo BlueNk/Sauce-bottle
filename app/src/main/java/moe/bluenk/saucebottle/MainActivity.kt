@@ -25,6 +25,13 @@ import kotlinx.android.synthetic.main.activity_main.imgView
 import kotlinx.android.synthetic.main.activity_main.ptUrl
 import okhttp3.*
 import java.io.*
+import android.R.string.cancel
+import android.app.Dialog
+import android.view.WindowManager
+import android.view.Gravity
+
+
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -174,12 +181,11 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_settings -> {
-                Snackbar.make(mainCoordinatorLayout,"button clicked!",Snackbar.LENGTH_SHORT).show()
+                Snackbar.make(mainCoordinatorLayout,"Noting to do",Snackbar.LENGTH_SHORT).show()
                 return true
             }
             R.id.action_about -> {
-                val popupAboutWindow = PopupWindow(popupAbout, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, true)
-                popupAboutWindow.showAtLocation(mainCoordinatorLayout, Gravity.CENTER, 0, 0)
+                Snackbar.make(mainCoordinatorLayout,"Same here...",Snackbar.LENGTH_SHORT).show()
                 return true
             }
             R.id.action_searchBy -> {
