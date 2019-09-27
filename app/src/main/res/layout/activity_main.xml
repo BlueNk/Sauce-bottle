@@ -18,11 +18,12 @@
             app:layout_behavior=".StopDragBehavior">
 
         <androidx.appcompat.widget.Toolbar
-                app:layout_scrollFlags="scroll"
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="?attr/colorPrimary"/>
+                android:background="?attr/colorPrimary"
+                app:layout_scrollFlags="scroll"
+                app:title="@string/app_name" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraintLayout"
@@ -91,18 +92,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
             android:layout_margin="@dimen/fab_margin"
-            app:maxImageSize="30dp" android:visibility="gone"/>
-    <moe.codeest.enviews.ENSearchView
-            app:search_line_width="8"
-            app:search_dot_size="3"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:id="@+id/enSearchView"
-            app:layout_constraintStart_toStartOf="@id/fab"
-            app:layout_constraintEnd_toEndOf="@id/fab"
-            app:layout_anchorGravity="center"
-            app:layout_anchor="@+id/fab"
-            android:elevation="8dp"
-            android:visibility="gone"/>
+            android:src="@drawable/ic_search"
+            android:visibility="gone"
+            app:maxImageSize="30dp" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

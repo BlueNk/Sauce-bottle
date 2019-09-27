@@ -30,6 +30,9 @@
     <string name="pixiv">Pixiv</string>
     <string name="twitter">Twitter</string>
     <string name="exhentai">exhentai</string>
+    <string name="imageSearch">Image search</string>
+    <string name="nijie">Nijie</string>
+    <string name="nico">nico nico</string>
 
 
 </resources>

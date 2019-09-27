@@ -12,7 +12,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_card.view.*
 
-val pixivImageServer = arrayOf("i.pximg.net", "i2.pixiv.net")
+val pixivImageServer = arrayOf("i.pximg.net", "i1.pixiv.net", "i2.pixiv.net")
 
 class CardAdapter(private val  jsonFeeds: JsonFeeds, val ctx: Context): RecyclerView.Adapter<ViewHolder>() {
 
@@ -63,7 +63,16 @@ class CardAdapter(private val  jsonFeeds: JsonFeeds, val ctx: Context): Recycler
         }
         // nico
         if ( jsonFeeds.results[position].header.index_id == 8 ) {
-            holder.view.stTinyTitle.text =  jsonFeeds.results[position].data.member_name
+            holder.view.stTinyTitle.text = jsonFeeds.results[position].data.member_name
+            holder.view.stSite.text = ctx.getString(R.string.nico)
+        }
+
+        // Nijie
+        if ( jsonFeeds.results[position].header.index_id == 11 ) {
+            holder.view.stTitle.text = jsonFeeds.results[position].data.title
+            holder.view.stTinyTitle.text = jsonFeeds.results[position].data.member_name
+            holder.view.stSite.text = ctx.getString(R.string.nijie)
+            holder.source = jsonFeeds.results[position].data.ext_urls[0]
         }
 
     }
@@ -90,6 +99,36 @@ class  ViewHolder(val view: View, var source: String? = null, var ext_urls: List
                 Snackbar.make(view,"What?! There's NO source here!", Snackbar.LENGTH_SHORT).show()
             }
 
+        }
+
+        view.setOnLongClickListener {
+            var link: Uri
+            if (source != null) {
+                val sourceURI:Uri = Uri.parse(source)
+                if (sourceURI.toString().startsWith("http")) {
+                    link = when (sourceURI.host) {
+                        in pixivImageServer -> Uri.parse("https://www.pixiv.net/member_illust.php?mode=medium&illust_id=${sourceURI.lastPathSegment?.split("_")?.first()}")
+                        else -> sourceURI
+                    }
+
+                    val shareIntent = Intent.createChooser( Intent().apply {
+                        action = Intent.ACTION_SEND
+                        putExtra(Intent.EXTRA_TEXT, link.toString())
+                        type = "text/*"
+
+//                        flags = Intent.FLAG_GRANT_READ_URI_PERMISSION
+                    }, null)
+
+                    view.context.startActivity(shareIntent)
+
+                } else {
+                    Snackbar.make(view,"The source \"$source\",is not URL.", Snackbar.LENGTH_LONG).show()
+                }
+            } else {
+                Snackbar.make(view,"What?! There's NO source here!", Snackbar.LENGTH_SHORT).show()
+            }
+
+            return@setOnLongClickListener true
         }
     }
 }

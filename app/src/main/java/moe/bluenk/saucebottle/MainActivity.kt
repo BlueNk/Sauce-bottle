@@ -106,7 +106,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getResponJson(request: Request) {
-        enSearchView.start()
+//        enSearchView.start()
 
         okhttp.newCall(request).enqueue(object :  Callback {
             override fun onResponse(call: Call, response: Response) {
@@ -196,7 +196,7 @@ class MainActivity : AppCompatActivity() {
                         iconLink = false
                         ptUrl.visibility  = View.VISIBLE
                         btnImage.visibility =View.GONE
-                        enSearchView.visibility = View.VISIBLE
+//                        enSearchView.visibility = View.VISIBLE
                         fab.show()
                     }
                     false -> {
@@ -206,7 +206,7 @@ class MainActivity : AppCompatActivity() {
                         ptUrl.visibility  = View.GONE
                         btnImage.visibility =View.VISIBLE
                         fab.hide()
-                        enSearchView.visibility = View.GONE
+//                        enSearchView.visibility = View.GONE
                     }
                 }
                 return  true
