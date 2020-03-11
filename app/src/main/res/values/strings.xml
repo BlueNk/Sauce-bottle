@@ -1,7 +1,7 @@
 <resources>
 
     <!--        main page        -->
-    <string name="app_name">Sauce bottle</string>
+    <string name="app_name">SauceNow</string>
     <string name="text_main">Find the source Nao!</string>
     <string name="edit_text_hint">URL</string>
     <string name="button_text">Image</string>

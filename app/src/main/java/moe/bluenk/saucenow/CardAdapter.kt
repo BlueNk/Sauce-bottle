@@ -1,4 +1,4 @@
-package moe.bluenk.saucebottle
+package moe.bluenk.saucenow
 
 import android.content.Context
 import android.content.Intent
@@ -12,7 +12,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_card.view.*
 
-val pixivImageServer = arrayOf("i.pximg.net", "i1.pixiv.net", "i2.pixiv.net")
+val pixivImageServer = arrayOf("i.pximg.net", "i1.pixiv.net", "i2.pixiv.net", "i3.pixiv.net", "i4.pixiv.net")
 
 class CardAdapter(private val  jsonFeeds: JsonFeeds, val ctx: Context): RecyclerView.Adapter<ViewHolder>() {
 

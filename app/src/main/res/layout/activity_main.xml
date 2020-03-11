@@ -69,7 +69,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
             />
-            <moe.bluenk.saucebottle.TopCropImageView
+            <moe.bluenk.saucenow.TopCropImageView
                     android:layout_height="200dp"
                     android:layout_width="match_parent"
                     android:id="@+id/imgView"

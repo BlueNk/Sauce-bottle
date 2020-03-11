@@ -1,10 +1,7 @@
-package moe.bluenk.saucebottle
+package moe.bluenk.saucenow
 
 import android.content.Context
-import android.graphics.Matrix
-import android.graphics.drawable.Drawable
 import android.util.AttributeSet
-import android.widget.ImageView
 import androidx.appcompat.widget.AppCompatImageView
 
 /**

@@ -1,4 +1,4 @@
-package moe.bluenk.saucebottle
+package moe.bluenk.saucenow
 
 import org.junit.Test
 

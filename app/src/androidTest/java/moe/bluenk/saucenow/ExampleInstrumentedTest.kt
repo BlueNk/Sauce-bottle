@@ -1,4 +1,4 @@
-package moe.bluenk.saucebottle
+package moe.bluenk.saucenow
 
 import androidx.test.InstrumentationRegistry
 import androidx.test.runner.AndroidJUnit4

@@ -1,6 +1,5 @@
-package moe.bluenk.saucebottle
+package moe.bluenk.saucenow
 
-import android.content.Context
 import android.content.Intent
 import android.graphics.BitmapFactory
 import android.net.Uri
@@ -8,16 +7,11 @@ import android.os.Bundle
 import android.os.Parcelable
 import android.util.Log
 import android.view.*
-import android.widget.PopupWindow
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.github.florent37.expectanim.ExpectAnim
-import com.github.florent37.expectanim.core.Expectations.*
-import com.google.android.material.appbar.AppBarLayout
 import com.google.gson.Gson
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.about.*
 
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.btnImage
@@ -25,12 +19,6 @@ import kotlinx.android.synthetic.main.activity_main.imgView
 import kotlinx.android.synthetic.main.activity_main.ptUrl
 import okhttp3.*
 import java.io.*
-import android.R.string.cancel
-import android.app.Dialog
-import android.view.WindowManager
-import android.view.Gravity
-
-
 
 
 class MainActivity : AppCompatActivity() {
