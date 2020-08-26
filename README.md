@@ -2,7 +2,7 @@
 An anime style image search app that using SauceNao API
 
 # How to use
-Open the app and choose a picture / paste URL string, or just simply shearing to the app.
+Open the app and choose a picture / paste URL string, or just simply sharing to the app.
 
 You can also long press the result to share!
 
