@@ -13,5 +13,3 @@ Beautiful artworks that use in this demo
 * https://www.pixiv.net/artworks/78474477
 * https://www.pixiv.net/artworks/72688602
 * https://www.pixiv.net/artworks/82690301
-
-This app is write by an non-native english speaker, so it will have some misspelling all over the place.
